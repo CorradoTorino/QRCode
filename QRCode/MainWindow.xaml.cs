@@ -27,6 +27,17 @@ namespace QRCodeSample
            return qrCode.GetGraphic(20);
         }
 
+        private static Bitmap CreateBigQrCode()
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+
+            string text = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "BigFile.txt"));
+
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            return qrCode.GetGraphic(20);
+        }
+
         private static Bitmap CreateMailQrCode()
         {
             Mail generator = new Mail("dummymail@gmail.com", "This is a subject!!", "Hi Corrado, have a look at this QRCoder library!");
@@ -97,6 +108,7 @@ namespace QRCodeSample
             //ImageViewer1.Source = GetMoon();
             //ImageViewer1.Source = GetQR();
             ImageViewer1.Source = GetMailQR();
+            //ImageViewer1.Source = BitmapToBitmapImage(CreateBigQrCode());
         }
     }
 }

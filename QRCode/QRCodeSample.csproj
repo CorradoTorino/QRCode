@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="BigFile.txt" />
     <None Remove="Moon.jpg" />
   </ItemGroup>
 
@@ -19,6 +20,12 @@
   <ItemGroup>
     <PackageReference Include="QRCoder" Version="1.3.6" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="BigFile.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

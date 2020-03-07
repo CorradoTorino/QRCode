@@ -1,0 +1,31 @@
+MIT License
+
+Copyright (c) 2020 Corrado
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+QR Codes are made of multiple rows and columns. The combination of these rows and columns makes a grid of modules (squares). There can be a maximum of 177 rows and 177 columns which means the maximum possible number of modules is 31,329. With the naked eye these are just small squares and mean very little, but the exact arrangement of those modules allows the QR Code to encode its data. This means that unlike traditional barcodes which are 1 dimensional and use 1 row of lines, QR Codes use 2 dimensions which allows them to store a lot more data in the same area of space.
+
+The QR Code standards don't allow you to create a QR Code with just any combination of rows and columns. There are 40 preset sizes that you must select from. These are referred to as versions.
+
+Version 1 QR Codes will have 21 rows and 21 columns. Each version thereafter increases by 4 rows and 4 columns. The largest version is version 40 which has 177 rows and 177 columns and results in the 31,329 needed to encode the 3kb of data.
+
+When a QR Code is being created, the QR Code generator assesses the amount of data you are trying to encode and from that it determines the version number that it needs to use. These levels allow the generator to encode a QR Code as efficiently as possible and means not every QR Code is forced to have 31,329 modules.
+
+If a QR Code contains a lot of data, then you will generally see that it looks "busier" to the naked eye (more modules and generally more tightly packed together). Here are some examples that show the difference in appearance for codes holding different volumes of data:
