@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using static QRCoder.PayloadGenerator;
 
 namespace QRCodeSample
 {
@@ -26,6 +27,17 @@ namespace QRCodeSample
            return qrCode.GetGraphic(20);
         }
 
+        private static Bitmap CreateMailQrCode()
+        {
+            Mail generator = new Mail("dummymail@gmail.com", "This is a subject!!", "Hi Corrado, have a look at this QRCoder library!");
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            return qrCode.GetGraphic(20);
+        }
+
         private static BitmapImage GetMoon()
         {
             string selectedFileName = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Moon.jpg");
@@ -40,6 +52,11 @@ namespace QRCodeSample
         private static BitmapImage GetQR()
         {
             return BitmapToBitmapImage(CreateQrCode());
+        }
+
+        private static BitmapImage GetMailQR()
+        {
+            return BitmapToBitmapImage(CreateMailQrCode());
         }
 
         private static Bitmap BitmapImageToBitmap(BitmapImage bitmapImage)
@@ -78,7 +95,8 @@ namespace QRCodeSample
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //ImageViewer1.Source = GetMoon();
-            ImageViewer1.Source = GetQR();
+            //ImageViewer1.Source = GetQR();
+            ImageViewer1.Source = GetMailQR();
         }
     }
 }
