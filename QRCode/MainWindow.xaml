@@ -5,11 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QRCode"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+Background="LightBlue">
     <Grid>
-        <TextBox HorizontalAlignment="Center" Margin="0,199,0,0" Text="Select a message option and then choose the Display button." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Display" HorizontalAlignment="Left" Margin="400,324,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Margin="10,0,0,0" Height="23" Name="Label1">
+        Current File:
+    </Label>
+    <Label Margin="5,0,0,0" Height="25" Name="FileNameLabel" Width="300" />
+    <Button Margin="5,0,0,0" Height="23"  Width="75" Click="Button_Click">
+        Display
+    </Button>
+        <Image Name="ImageViewer1" Height="400" Width="400" />
     </Grid>
-    <!--<StackPanel Orientation="Horizontal" Background="LightBlue" Height="40">
-    </StackPanel>-->
 </Window>
+
